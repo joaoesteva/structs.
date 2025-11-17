@@ -134,40 +134,34 @@ int main(void) {
     struct Categoria categorias[TAM];
     struct Produto produtos[TAM];
     int qtdCategorias = 0, qtdProdutos = 0;
-
-    // Exemplo de cadastro de categoria
+    
     cadastrarCategoria(categorias, &qtdCategorias);
     cadastrarCategoria(categorias, &qtdCategorias);
 
-    // Imprime categorias
     printf("\n--- Lista de Categorias ---\n");
     imprimirCategorias(categorias, qtdCategorias);
 
-    // Exemplo de cadastro de produtos
     produtos[qtdProdutos].codigo = 1;
     strcpy(produtos[qtdProdutos].titulo, "Notebook");
     strcpy(produtos[qtdProdutos].descricao, "Notebook Gamer");
     produtos[qtdProdutos].categoria = categorias[0].codigo;
-    produtos[qtdProdutos].preco = 599900; // R$5999.00
+    produtos[qtdProdutos].preco = 599900; 
     qtdProdutos++;
 
     produtos[qtdProdutos].codigo = 2;
     strcpy(produtos[qtdProdutos].titulo, "Mouse");
     strcpy(produtos[qtdProdutos].descricao, "Mouse sem fio");
     produtos[qtdProdutos].categoria = categorias[1].codigo;
-    produtos[qtdProdutos].preco = 2500; // R$25.00
+    produtos[qtdProdutos].preco = 2500; /
     qtdProdutos++;
 
-    // Imprime produtos
     printf("\n--- Lista de Produtos ---\n");
     imprimirProdutos(produtos, qtdProdutos, categorias, qtdCategorias);
 
-    // Ordena produtos por descricao
     selectionSortPorDescricao(produtos, qtdProdutos);
     printf("\n--- Produtos Ordenados por Descricao ---\n");
     imprimirProdutos(produtos, qtdProdutos, categorias, qtdCategorias);
 
-    // Busca produto
     char busca[256];
     printf("\nDigite descricao do produto para buscar: ");
     getchar();
@@ -178,3 +172,4 @@ int main(void) {
 
     return 0;
 }
+
